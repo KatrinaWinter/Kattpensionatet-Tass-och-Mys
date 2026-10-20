@@ -1,7 +1,7 @@
 public class Katt {
-    private String namn;
-    private String ras;
-    private int chipnr;
+    private final String namn;
+    private final String ras;
+    private final int chipnr;
 
     public Katt(String namn, String ras, int chipnr) {
         this.namn = namn;
