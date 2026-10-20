@@ -18,4 +18,17 @@ public class KattHotell {
     public int antalKatter() {
         return katter.size();
     }
+
+    public void upprop() {
+        if (katter.isEmpty()) {
+            System.out.println("Hotelet är tomt.");
+            return;
+        }
+        for (Katt katt : katter) {
+            System.out.println(katt.getNamn() + ", " +
+                    katt.getRas() + ", chipnummer: " +
+                    katt.getChipnr());
+        }
+    }
+
 }
