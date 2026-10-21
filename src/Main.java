@@ -10,7 +10,7 @@
 import java.util.Scanner;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         KattHotell hotell = new KattHotell();
 
@@ -73,7 +73,7 @@ public class Main {
                 System.out.println("Programmet avslutas.");
             } else {
                 System.out.println(
-                        "Ogiltigt val. Välj mellan 1 och 5."
+                        "Ogiltigt val. Välj mellan 1 och 6."
                 );
             }
         }

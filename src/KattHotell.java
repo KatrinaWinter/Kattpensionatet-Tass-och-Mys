@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class KattHotell {
     private List<Katt> katter = new ArrayList<>();
@@ -40,12 +41,17 @@ public class KattHotell {
     }
 
     public boolean checkaUt(int chipnr) {
-        for (Katt katt : katter) {
+        Iterator<Katt> iterator = katter.iterator();
+
+        while (iterator.hasNext()) {
+            Katt katt = iterator.next();
+
             if (katt.getChipnr() == chipnr) {
-                katter.remove(katt);
+                iterator.remove();
                 System.out.println(katt.getNamn() + " har checkat ut.");
                 return true;
             }
+
         }
         System.out.println("Ingen katt hittades med chipnummer " + chipnr);
         return false;
