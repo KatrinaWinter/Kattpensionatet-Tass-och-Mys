@@ -18,11 +18,12 @@ public class Main {
 
         int val = 0;
 
-        while (val != 4) {
+        while (val != 5) {
             System.out.println("\n1. Checka in katt");
             System.out.println("2. Lista alla incheckade katter");
             System.out.println("3. Sök katt på namn");
-            System.out.println("4. Avsluta programmet");
+            System.out.println("4. Visa antal katter");
+            System.out.println("5. Avsluta programmet");
             System.out.print("Välj ett alternativ: ");
 
             val = scanner.nextInt();
@@ -58,10 +59,13 @@ public class Main {
                     System.out.println("Katten hittades inte.");
                 }
             } else if (val == 4) {
-                System.out.println("Programmet avslutas.");
+                System.out.println("Just nu bor det " + hotell.antalKatter()
+                        + " katter på hotellet!");
+            } else if (val == 5){
+                    System.out.println("Programmet avslutas.");
             } else {
                 System.out.println(
-                        "Ogiltigt val. Välj mellan 1 och 4."
+                        "Ogiltigt val. Välj mellan 1 och 5."
                 );
             }
         }
