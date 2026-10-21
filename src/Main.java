@@ -2,6 +2,14 @@
 //[x] 2. Register /lista på incheckade katter. Privat
 //[x] 3. Blokera/spärra om två katter med samma nummer försöker registreras. Meddela
 //[x] 4. Vill see namn ras och chipnummer vid upprop. Meddela om det är tomt.
+// NYA PUNKTER FÖR PASS 2:
+// [ ] 7. Göra så att hotellet kan leta upp en katt på namn (eller svara tomt om den saknas)
+// [ ] 8. Bygga meny-loopen som snurrar med Scanner tills vi väljer att avsluta
+// [ ] 9. Koppla ihop val 1-4 med hotellet (och skydda sökningen i val 3 mot krasch med en grindvakt)
+/* 1. Checka in katt
+2. Lista alla incheckade katter
+3. Sök katt på namn
+4. Avsluta programmet*/
 
 public class Main {
     static void main(String[] args) {
