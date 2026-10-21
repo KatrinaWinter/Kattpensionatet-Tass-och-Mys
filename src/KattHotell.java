@@ -39,4 +39,16 @@ public class KattHotell {
         return null;
     }
 
+    public boolean checkaUt(int chipnr) {
+        for (Katt katt : katter) {
+            if (katt.getChipnr() == chipnr) {
+                katter.remove(katt);
+                System.out.println(katt.getNamn() + " har checkat ut.");
+                return true;
+            }
+        }
+        System.out.println("Ingen katt hittades med chipnummer " + chipnr);
+        return false;
+    }
+
 }
