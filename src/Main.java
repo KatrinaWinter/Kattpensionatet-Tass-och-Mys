@@ -4,29 +4,69 @@
 //[x] 4. Vill see namn ras och chipnummer vid upprop. Meddela om det är tomt.
 // NYA PUNKTER FÖR PASS 2:
 // [x] 7. Göra så att hotellet kan leta upp en katt på namn (eller svara tomt om den saknas)
-// [] 8. Bygga meny-loopen som snurrar med Scanner tills vi väljer att avsluta
-// [] 9. Koppla ihop val 1-4 med hotellet (och skydda sökningen i val 3 mot krasch med en grindvakt)
-/* 1. Checka in katt
-2. Lista alla incheckade katter
-3. Sök katt på namn
-4. Avsluta programmet*/
+// [x] 8. Bygga meny-loopen som snurrar med Scanner tills vi väljer att avsluta
+// [x] 9. Koppla ihop val 1-4 med hotellet (och skydda sökningen i val 3 mot krasch med en grindvakt)
+
+import java.util.Scanner;
 
 public class Main {
     static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         KattHotell hotell = new KattHotell();
 
-        Katt katt1 = new Katt("Misse", "Birma", 1001);
-        Katt katt2 = new Katt("Kitty", "Bond", 1003);
-        Katt katt3 = new Katt("Maja", "Siames", 1001);
+        System.out.println("\n--- KattHotell ---");
 
+        int val = 0;
 
-        hotell.laggTill(katt1);
-        hotell.laggTill(katt2);
-        hotell.laggTill(katt3);
+        while (val != 4) {
+            System.out.println("\n1. Checka in katt");
+            System.out.println("2. Lista alla incheckade katter");
+            System.out.println("3. Sök katt på namn");
+            System.out.println("4. Avsluta programmet");
+            System.out.print("Välj ett alternativ: ");
 
-        hotell.upprop();
+            val = scanner.nextInt();
+            scanner.nextLine();
 
-        System.out.println("Antal katter på hotellet: " + hotell.antalKatter());
+            if (val == 1) {
+                System.out.print("Kattens namn: ");
+                String namn = scanner.nextLine();
 
+                System.out.print("Kattens ras: ");
+                String ras = scanner.nextLine();
+
+                System.out.print("Fyrsiffrigt chipnummer: ");
+                int chipnr = scanner.nextInt();
+                scanner.nextLine();
+
+                Katt katt = new Katt(namn, ras, chipnr);
+                hotell.laggTill(katt);
+            } else if (val == 2) {
+                hotell.upprop();
+
+            } else if ( val == 3) {
+                System.out.print("Ange kattens namn: ");
+                String namn = scanner.nextLine();
+
+                Katt hittad = hotell.hittaKatt(namn);
+
+                if (hittad != null) {
+                    System.out.println( hittad.getNamn() + ", " +
+                                    hittad.getRas() + ", chipnummer: " +
+                                    hittad.getChipnr());
+                } else {
+                    System.out.println("Katten hittades inte.");
+                }
+            } else if (val == 4) {
+                System.out.println("Programmet avslutas.");
+            } else {
+                System.out.println(
+                        "Ogiltigt val. Välj mellan 1 och 4."
+                );
+            }
+        }
+
+        scanner.close();
     }
+
 }
