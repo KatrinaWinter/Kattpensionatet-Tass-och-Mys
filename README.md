@@ -1,4 +1,6 @@
-# KattHotell – Tass och Mys
+KattHotell – Tass och Mys
 
-Ett enkelt Java-program för att checka in katter på ett kattpensionat och registrera deras namn, ras och fyrsiffriga chipnummer. 
-Programmet förhindrar att två katter registreras med samma chipnummer och kan visa ett upprop med alla incheckade katter samt det totala antalet.
+Ett enkelt Java-program för att hantera ett kattpensionat. 
+Programmet kan checka in och checka ut katter, söka efter katter via namn och visa alla incheckade katter samt det totala antalet. 
+Varje katt har ett namn, en ras och ett chipnummer, och systemet förhindrar att flera katter registreras med samma chipnummer. 
+Programmet styrs via en meny i konsolen.
